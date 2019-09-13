@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.JAXBException;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.*;
 
@@ -23,6 +24,8 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public String getProductsForUgyvitel(String apiKey) throws JAXBException, IOException {
+
+    client.newBuilder().connectTimeout(15, TimeUnit.SECONDS).writeTimeout(15, TimeUnit.SECONDS).readTimeout(15, TimeUnit.SECONDS);
 
     Request getProductRequest = new Request.Builder()
         .url(UnasEndpoints.GETPRODUCTS.toString())
