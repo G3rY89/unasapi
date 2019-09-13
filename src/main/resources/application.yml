@@ -4,4 +4,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://supersync-eureka.azurewebsites.net/eureka
+      defaultZone: https://supersync-eureka.herokuapp.com/eureka
