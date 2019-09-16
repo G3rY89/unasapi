@@ -12,7 +12,7 @@
 	<artifactId>unasapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>unasapi</name>
-	<description>RestApi for KS Ügyvitel and UNAS webshop</description>
+	<description>RestApi for Kulcs-Soft Ügyvitel and UNAS webshop</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -6,7 +6,8 @@ public enum UnasEndpoints {
     SETPRODUCTS("https://api.unas.eu/shop/setProduct"),
     GETCUSTOMERS("https://api.unas.eu/shop/getCustomer"),
     SETCUSTOMERS("https://api.unas.eu/shop/setCustomer"),
-    GETORDERS("https://api.unas.eu/shop/getOrder");
+    GETORDERS("https://api.unas.eu/shop/getOrder"),
+    SETORDERS("https://api.unas.eu/shop/setOrder");
 
     public final String url;
 

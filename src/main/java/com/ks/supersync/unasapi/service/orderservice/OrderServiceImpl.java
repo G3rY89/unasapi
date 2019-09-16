@@ -32,4 +32,23 @@ public class OrderServiceImpl implements OrderService {
     return response.body().string();
 	}
 
+    @Override
+    public String setOrdersToUnas(String apiKey, String Orders) throws JAXBException, IOException {
+        
+        MediaType mediaType = MediaType.parse("application/xml");
+
+        RequestBody body = RequestBody.create(mediaType, Orders.toString());
+
+        String token = unasAuthService.getToken(apiKey);
+
+        Request setOrderRequest = new Request.Builder()
+            .url(UnasEndpoints.SETORDERS.toString())
+            .post(body)
+            .addHeader("Authorization", token)
+            .build();
+        Response response = client.newCall(setOrderRequest).execute();
+
+        return response.body().string();
+    }
+
 }
