@@ -22,12 +22,13 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public String getOrdersForUgyvitel(String apiKey) throws JAXBException, IOException {
-        Request getCustomersRequest = new Request.Builder()
+
+        Request getOrderRequest = new Request.Builder()
             .url(UnasEndpoints.GETORDERS.toString())
             .get()
             .addHeader("Authorization", unasAuthService.getToken(apiKey))
             .build();
-        Response response = client.newCall(getCustomersRequest).execute();
+        Response response = client.newCall(getOrderRequest).execute();
 
     return response.body().string();
 	}
