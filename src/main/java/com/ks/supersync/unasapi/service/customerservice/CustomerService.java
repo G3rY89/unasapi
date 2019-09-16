@@ -8,4 +8,5 @@ public interface CustomerService{
 
     public String getCustomersForUgyvitel(String apiKey) throws JAXBException, IOException;
     
+    public Object setCustomersToUnas(String apiKey, String Customers) throws JAXBException, IOException;
 }
