@@ -20,7 +20,6 @@ public class StockServiceImpl implements StockService {
 
     OkHttpClient client = new OkHttpClient();
 
-
     @Override
     public String setStocksToUnas(String apiKey, String Stocks) throws JAXBException, IOException {
         

@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryService {
         String token = unasAuthService.getToken(apiKey);
 
         Request setCategoriesRequest = new Request.Builder()
-            .url(UnasEndpoints.SETCUSTOMERS.toString())
+            .url(UnasEndpoints.SETCATEGORIES.toString())
             .post(body)
             .addHeader("Authorization", token)
             .build();
