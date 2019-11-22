@@ -21,9 +21,6 @@ public class UnasAuthServiceImpl implements UnasAuthService {
         HttpEntity<String> entity = new HttpEntity<String>(request);
         String response = restTemplate.postForObject(UnasEndpoints.LOGIN.toString(), entity, String.class);
         Document doc = Jsoup.parse(response, "", Parser.xmlParser());
-
-        System.out.println(doc.select("Login").select("Token").text());
-        System.out.println(request);
         
         return doc.select("Login").select("Token").text();
     }
