@@ -27,6 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
             .get()
             .addHeader("Authorization", unasAuthService.getToken(apiKey))
             .build();
+            System.out.println(getCustomersRequest.body().toString());
         Response response = client.newCall(getCustomersRequest).execute();
     
         return response.body().string();
