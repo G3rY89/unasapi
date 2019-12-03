@@ -22,13 +22,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String getCustomersForUgyvitel(String apiKey) throws JAXBException, IOException {
+        
         Request getCustomersRequest = new Request.Builder()
             .url(UnasEndpoints.GETCUSTOMERS.toString())
             .get()
             .addHeader("Authorization", unasAuthService.getToken(apiKey))
             .build();
         Response response = client.newCall(getCustomersRequest).execute();
-        System.out.println(response.body().string());
     
         return response.body().string();
     }
@@ -36,7 +36,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Object setCustomersToUnas(String apiKey, String Customers) throws JAXBException, IOException {
 
-        System.out.println(Customers);
         MediaType mediaType = MediaType.parse("application/xml");
 
         RequestBody body = RequestBody.create(mediaType, Customers.toString());

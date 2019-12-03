@@ -1,7 +1,3 @@
 spring:
   application:
     name: ks-supersync-unasapi
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://supersync-eureka.herokuapp.com/eureka
